@@ -1,46 +1,98 @@
+//const generateHTML = require('./html-creator');
+//const util = require('util');
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHTML = require('./html-creator');
-const util = require('util');
+const path = require('path');
 
-class Employee {
-    constructor() {
-        this.name
-        this.id
-        this.email
-        this.getName()
-        this.getid
-        this.getEmail
-        this.getRole()
+// classes files
+const Employee = require('./lib/employee');
+const Manager = require('./lib/manager');
+const Intern = require('./lib/intern');
+const Engineer = require('./lib/engineer');
+
+const output = require = path.resolve(__dirname, "output", "myTeam.html");
+
+//const render = require('./lib/html-render');
+
+const team = [];
+
+const arrayID = [];
+
+
+
+function teamView() {
+
+    function createManager() {
+        console.log("Go ahead and build the team!");
+
+        inquirer.prompt([
+            {
+                type: "Input",
+                name: "managerName",
+                message: "What is your managaer name?"
+            },
+            {
+                type: "Input",
+                name: "managerId",
+                message: "What is your managaer id?"
+            }
+        ]).then(answers => {
+            const manager = new Manager(answers.managerName, answers.managerId);
+            team.push(manager);
+            arrayID.push(managerId);
+            buildTeam();
+        })
     }
-}
-class Manager {
-    constructor() {
-        this.officeNumber
-        this.getRole()
+
+    function buildTeam() {
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "members",
+                message: "Add another member to your team?",
+                choices: [
+                    "Engineer",
+                    "Intern",
+                    "No need to add a member"
+                ].then(selectedMember => {
+                    switch (selectedMember.members) {
+                        case "Engineer":
+                            createEngineer();
+                            break;
+                        case "Intern":
+                            createIntern();
+                            break;
+                        default:
+                            createHtml();
+                    }
+                })
+            }
+        ])
     }
+
+    createManager();
 }
 
-class Engineer {
-    constructor() {
-        this.gitHubName
-        this.getGitHub()
-        this.getRole()
-    }
-}
 
-class Intern {
-    constructor() {
-        this.school
-        this.getSchool()
-        this.getRole()
-    }
-}
+
+teamView();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //array of prompts for user input
 
-
+/*
 inquirer.prompt([
 
     {
@@ -85,17 +137,7 @@ inquirer.prompt([
 ])
 
 
-
-
-    .then((response) => {
-        if (inquirer.choices === "yes") {
-            return "Engineer" || "Intern";
-        }
-
-
-
-
-    });
+*/
 
 
 
