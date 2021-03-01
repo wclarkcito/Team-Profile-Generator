@@ -9,18 +9,14 @@ const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
 const Engineer = require('./lib/engineer');
-
 const output = require = path.resolve(__dirname, "output", "myTeam.html");
-
-//const render = require('./lib/html-render');
-
 const team = [];
-
 const arrayID = [];
 
 
 
-// function teamView() {
+
+//initialization function for Manager to create team
 
 function createManager() {
     console.log("Go ahead and build the team!");
@@ -70,7 +66,7 @@ function buildTeam() {
             choices: [
                 "Engineer",
                 "Intern",
-                "No need to add a member"
+                "Team Finished"
             ]
         }
     ]).then(selectedMember => {
@@ -87,6 +83,7 @@ function buildTeam() {
     })
 }
 
+//creates prompts for Engineer information
 
 function createEngineer() {
     console.log("Go ahead and build the team!");
@@ -119,6 +116,9 @@ function createEngineer() {
         buildTeam();
     })
 }
+
+//creates prompts for Intern information
+
 function createIntern() {
     console.log("Go ahead and build the team!");
 
@@ -146,13 +146,12 @@ function createIntern() {
     ]).then(answers => {
         const intern = new Intern(answers.Name, answers.internId, answers.email, answers.school);
         team.push(intern);
-        // arrayID.push(managerId);
         buildTeam();
     })
 }
 function createHtml() {
     console.log(team)
-    let html = "<!DOCTYPE html><head><title>Employee roster</title><link rel='stylesheet' href='style.css'></head><body><h1>Emplyee Roster</h1><div class = 'container'>"
+    let html = "<!DOCTYPE html><head><title>Employee Roster</title><link rel='stylesheet' href='style.css'></head><body><h1>Employee Roster</h1><div class = 'container'>"
 
     team.forEach((member, index) => {
         if (member instanceof Manager) {
@@ -167,24 +166,25 @@ function createHtml() {
     fs.writeFile("index.html", html, (err) => {
         console.log(err)
     })
+
     //functions to create cards for Manager Engineer and Intern respectively
 }
 createManager();
 function buildManagerCard(member) {
     return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x2615; Manager</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">office number: ${member.officeNumber}</div></div></div>`
 }
-createEngineer();
+
 function buildEngineerCard(member) {
-    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F576; Manager</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">office number: ${member.github}</div></div></div>`
+    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F576; Engineer</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">GitHub: ${member.github}</div></div></div>`
 }
-createIntern();
+
 function buildInternCard(member) {
-    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F393; Manager</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">office number: ${member.school}</div></div></div>`
+    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F393; Intern</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">School: ${member.school}</div></div></div>`
+
+
+
+
 }
-
-
-
-
 
 
 
