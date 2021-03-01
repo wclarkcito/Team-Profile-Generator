@@ -167,25 +167,20 @@ function createHtml() {
     fs.writeFile("index.html", html, (err) => {
         console.log(err)
     })
-
+    //functions to create cards for Manager Engineer and Intern respectively
 }
-
+createManager();
 function buildManagerCard(member) {
     return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x2615; Manager</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">office number: ${member.officeNumber}</div></div></div>`
 }
-createManager();
-
-
-
-
-// teamView();
-
-
-
-
-
-
-
+createEngineer();
+function buildEngineerCard(member) {
+    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F576; Manager</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">office number: ${member.github}</div></div></div>`
+}
+createIntern();
+function buildInternCard(member) {
+    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F393; Manager</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">office number: ${member.school}</div></div></div>`
+}
 
 
 
@@ -193,54 +188,25 @@ createManager();
 
 
 
-//array of prompts for user input
-
-/*
-inquirer.prompt([
-
-    {
-        type: "input",
-        name: "name",
-        message: "What is the Team Managers name?"
-    },
-    {
-        type: "input",
-        name: "name",
-        message: "What is your employee ID?"
-    },
-
-    {
-        type: "input",
-        name: "email",
-        message: "What is your email address?"
-    },
-    {
-        type: "input",
-        name: "name",
-        message: "What is your office number?"
-    },
-    {
-        type: "list",
-        name: "addPerson",
-        message: "Would you like to add an Engineer or an Intern to finish building team?",
-        choices: ["yes", "no"]
-    },
-    {
-        type: "input",
-        name: "Github",
-        message: "What is your GitHub username?"
-    },
-
-    {
-        type: "input",
-        name: "name",
-        message: "What school do you go to?"
-    },
-
-])
 
 
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
