@@ -14,8 +14,6 @@ const team = [];
 const arrayID = [];
 
 
-
-
 //initialization function for Manager to create team
 
 function createManager() {
@@ -45,15 +43,9 @@ function createManager() {
     ]).then(answers => {
         const manager = new Manager(answers.managerName, answers.managerId, answers.email, answers.officeNumber);
         team.push(manager);
-        // arrayID.push(managerId);
         buildTeam();
 
-
-
-
-
     })
-
 
 }
 
@@ -107,12 +99,11 @@ function createEngineer() {
         {
             type: "input",
             name: "GitHub",
-            message: "What is your GitHub?"
+            message: "What is your GitHub username?"
         },
     ]).then(answers => {
         const engineer = new Engineer(answers.Name, answers.engineerId, answers.email, answers.GitHub);
         team.push(engineer);
-        // arrayID.push(managerId);
         buildTeam();
     })
 }
