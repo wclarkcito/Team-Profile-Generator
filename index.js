@@ -1,10 +1,9 @@
-//const generateHTML = require('./html-creator');
-//const util = require('util');
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
 
-// classes files
+// class files
 const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
@@ -48,6 +47,7 @@ function createManager() {
     })
 
 }
+//function to give the option to add another team member or finish team without
 
 function buildTeam() {
     inquirer.prompt([
