@@ -1,3 +1,11 @@
+/*styling for the header*/
+
+h1 {
+  font: bold 52px Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px yellowgreen, 2px 2px green, 3px 3px blue;
+  text-align: center;
+}
+
 /*styles for container */
 
 .container {
@@ -14,9 +22,16 @@
 
 .container .card {
   padding: 25px;
-  background-color: white;
+  background-color: grey;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
   min-width: 250px;
   margin: 10px 15px;
+  font: bold 20px Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px blue, 2px 2px blue, 3px 3px blueviolet;
+  position: relative;
+  top: -3px;
+  left: -3px;
+  text-shadow: 1px 1px whitesmoke, 2px 2px burlywood, 3px 3px burlywood,
+    4px 4px burlywood;
 }
