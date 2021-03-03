@@ -162,15 +162,15 @@ function createHtml() {
 }
 createManager();
 function buildManagerCard(member) {
-    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x2615; Manager</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">office number: ${member.officeNumber}</div></div></div>`
+    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x2615; Manager</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: <a href='mailto:${member.email}'>${member.email}</a></div><div class = "row">office number: ${member.officeNumber}</div></div></div>`
 }
 
 function buildEngineerCard(member) {
-    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F576; Engineer</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">GitHub: ${member.github}</div></div></div>`
+    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F576; Engineer</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: <a href='mailto:${member.email}'>${member.email}</a></div><div class = "row">GitHub: <a href = 'https://github.com/${member.github}'>${member.github}</a></div></div></div>`
 }
 
 function buildInternCard(member) {
-    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F393; Intern</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: ${member.email}</div><div class = "row">School: ${member.school}</div></div></div>`
+    return `<div class = "card"><div class = "header"><h2>${member.name}</h2><h3>&#x1F393; Intern</h3></div><div class = "body"><div class = "row">id: ${member.id}</div><div class = "row">email: <a href='mailto:${member.email}'>${member.email}</a></div><div class = "row">School: ${member.school}</div></div></div>`
 
 
 
